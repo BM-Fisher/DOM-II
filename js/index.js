@@ -34,3 +34,30 @@ console.log('page', page);
 page.addEventListener('copy', (event) => {
     alert('Ohhhh they stealin!')
 })
+
+// 5 (mouseover)
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+    link.addEventListener('mouseover', (event) =>{
+        event.target.style.color = '#fdce41';
+        event.target.style.textTransform = 'uppercase'
+    })
+})
+
+// 6 (mouseout)
+navLinks.forEach(link => {
+    link.addEventListener('mouseout', (event) =>{
+        event.target.style.color = '#000000';
+        event.target.style.textTransform = 'capitalize';
+    })
+})
+
+// 7 (dblclick)
+const bus = document.querySelector('img');
+console.log('bus img', bus)
+bus.addEventListener('click', () => {
+    bus.src = 'https://o.aolcdn.com/images/dims?quality=85&image_uri=https%3A%2F%2Fo.aolcdn.com%2Fhss%2Fstorage%2Fmidas%2Fac37bd9a8893041d7064ce43b60c1045%2F200261530%2Fmagic-school-bus-360-concept.jpg&client=amp-blogside-v2&signature=233050a712c79731fb73e1d7e1ab44e65ff213b8';
+})
+bus.addEventListener('dblclick', () => {
+    bus.src = './img/fun-bus.jpg';
+})
