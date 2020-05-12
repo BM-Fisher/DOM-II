@@ -61,3 +61,43 @@ bus.addEventListener('click', () => {
 bus.addEventListener('dblclick', () => {
     bus.src = './img/fun-bus.jpg';
 })
+
+// 8 (resize)
+window.addEventListener('resize', (event) => {
+    console.log(`Don't squish me!`);
+})
+
+// 9 (drag)
+const img = document.querySelectorAll('img');
+console.log('images', img);
+img.forEach(image => {
+    image.addEventListener('drag', (event) => {
+        console.log('Where are we going? STRANGER DANGER!');
+    })
+})
+
+//10 (keydown)
+window.addEventListener('keydown', () => {
+    console.log('Drop it drop it low low');
+})
+
+// stopPropagation() example
+const topContent = document.querySelectorAll('.content-section .text-content');
+console.log('Top Content', topContent);
+
+topContent.forEach(section => {
+    section.addEventListener('click', (event) => {
+        event.target.style.backgroundColor = "#8DBEC2";
+    })
+})
+
+const topContentH2 = document.querySelectorAll('.content-section .text-content h2');
+console.log('top content h2 titles', topContentH2)
+
+topContentH2.forEach(title => {
+    title.addEventListener('click', (event) => {
+        event.stopPropagation();
+        event.target.style.color = "#501B09";
+        event.target.style.textTransform = 'uppercase';
+    })
+})
